@@ -21,7 +21,7 @@ get "/" do
 end
 
 
-get "/artist/:id" do
+get "/artists/:id" do
   @artist_parameter = params[:id]
   @artist = DB.execute("
     SELECT *
@@ -41,7 +41,7 @@ end
 
 
 
-get "/album/:id" do
+get "/albums/:id" do
   @album_parameter = params[:id]
   @album = DB.execute("
     SELECT *
@@ -61,7 +61,7 @@ get "/album/:id" do
   erb :album
 end
 
-get "/track/:id" do
+get "/tracks/:id" do
     @track_parameter = params[:id]
     @track = DB.execute("SELECT * FROM tracks WHERE id = '#{@track_parameter}'")
     p "$"*100
