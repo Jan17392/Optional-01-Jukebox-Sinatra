@@ -7,7 +7,7 @@ configure :development do
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
-DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/jukebox.sqlite'))
+DB = SQLite3::Database.new('lib/db/jukebox.sqlite')
 
 get "/" do
   # TODO: Gather all artists to be displayed on home page
