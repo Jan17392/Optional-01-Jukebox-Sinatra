@@ -1,11 +1,6 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 require "sqlite3"
-require "better_errors"
-configure :development do
-  use BetterErrors::Middleware
-  BetterErrors.application_root = File.expand_path('..', __FILE__)
-end
 
 DB = SQLite3::Database.new('lib/db/jukebox.sqlite')
 
@@ -64,9 +59,6 @@ end
 get "/tracks/:id" do
     @track_parameter = params[:id]
     @track = DB.execute("SELECT * FROM tracks WHERE id = '#{@track_parameter}'")
-    p "$"*100
-    p @track
-
     @track = {
       creator: @track[0][5],
       id: @track[0][0],
