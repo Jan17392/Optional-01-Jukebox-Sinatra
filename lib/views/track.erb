@@ -1,20 +1,15 @@
-<h2>Artists</h2>
+<h2> <%= @track[:title] %> created by <%= @track[:creator] %></h2>
 
 <div class="container">
   <br>
     <div id="artists" class="row list-group">
-
-        <% @artists.each do |artist| %>
-
           <div class="item  col-xs-4 col-lg-4">
               <div class="thumbnail">
                   <div class="caption">
                       <h4 class="group inner list-group-item-heading">
-                          <a href="http://localhost:4567/artist/<%= artist[:id] %>"><%= artist[:name] %></a></h4>
+                      </h4>
                   </div>
               </div>
           </div>
-
-        <% end %>
     </div>
 </div>
