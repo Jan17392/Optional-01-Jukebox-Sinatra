@@ -34,8 +34,6 @@ get "/artists/:id" do
   erb :artist
 end
 
-
-
 get "/albums/:id" do
   @album_parameter = params[:id]
   @album = DB.execute("
